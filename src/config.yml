@@ -1,0 +1,102 @@
+version: 112
+options:
+  #全局开启物品不可破坏
+  global-unbreakable: true
+  #开启锻造成功领取界面
+  result-gui: true
+  #强度条颜色代码，依次为强度从低到高
+  strength-color: '54c6e93b2a'
+items:
+  #锻造装备配置
+  mhxtj:
+    id: 268
+    data: 0
+    #物品名
+    display: '&a&l<前缀词>&3魔化玄铁剑'
+    #不可破坏，mc1.9+
+    unbreakable: false
+    #隐藏伤害,mc1.9+
+    hide-attribute: false
+    #自定义lore
+    lores:
+    - '&a类型：主武器     品质：稀有'
+    - ''
+    - '&8&m---------&8&l[&d&l  属性  &8&l]&8&m---------'
+    - '&f>> &7暴击几率: &a<暴击几率>%'
+    - '&f>> &7生命吸取: &a1%'
+    - '&f>> &7致盲: &a1%'
+    - '&f>> &7等级: &a10'
+    - '&8&m---------&8&l[&b&l  锻造  &8&l]&8&m---------'
+    - '&f>> &7攻击力: &c<攻击力1>-<攻击力2>'
+    - '&f>> &7暴击伤害: &c178%'
+    - '&f>> &7吸血倍率: &c<吸血倍率>%'
+    - '&8&m---------&8&l[&e&l  描述  &8&l]&8&m---------'
+    - '&7魔族唯一留下来的神器之一'
+    - '&7但是还存在了图纸里'
+    - '&a二阶装备'
+    - ''
+    - '&e品质&r:<等级>'
+    - '&a强度&r:&3[<strength>]'
+    - '&7锻造者&6[&b&l<player>&6]'
+    #锻造等级配置
+    levels:
+      普通:
+        #概率权重，必须大于0
+        weight: 2
+        等级:
+          #数值类型，fixed固定内容, random随机整数(value1必须小于value2)，
+          #strength强度类型，lores随机文本，float随机小数(start必须小于bound)
+          type: fixed
+          value: '&6普通'
+        暴击几率:
+          type: random
+          value1: 4
+          value2: 6
+        攻击力1:
+          type: strength
+          base: 100
+          add: 50
+        攻击力2:
+          type: strength
+          base: 250
+          add: 200
+        吸血倍率:
+          type: float
+          #显示的小数位
+          decimal: 1
+          start: 2.1
+          bound: 4.5
+        前缀词:
+          type: lores
+          value:
+          - 淬火的
+          - 平衡的
+          - 精良的
+      粗糙:
+        weight: 3
+        等级:
+          type: fixed
+          value: '&7粗糙'
+        暴击几率:
+          type: random
+          value1: 3
+          value2: 5
+        攻击力1:
+          type: strength
+          base: 50
+          add: 50
+        攻击力2:
+          type: strength
+          base: 150
+          add: 200
+        吸血倍率:
+          type: float
+          decimal: 1
+          start: 1.0
+          bound: 2.0
+        前缀词:
+          type: lores
+          value:
+          - 开裂的
+          - 生锈的
+          - 弯曲的
